@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хацкер Shop</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="data:image/jpeg;base64,ВОТ СЮДА КОД ФОТО" alt="Нажмите для воспроизведения звука" id="myImage">
+    
+    <audio id="myAudio" src="data:audio/mpeg;base64,ВОТ СЮДА КОД ЗВУКА" loop></audio>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+        const image = document.getElementById('myImage');
+
+        image.addEventListener('click', function() {
+            audio.play(); // Звук
+        });
+    </script>
+</body>
+</html>
