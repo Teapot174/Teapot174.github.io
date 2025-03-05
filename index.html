@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ХацкерNFC</title>
+    <title>Хацкер Shop</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #0a090a; /* ФОН */
+            background-color: #0a090a; /* Фон */
             margin: 0;
         }
         img {
@@ -34,23 +34,32 @@
         image.addEventListener('click', function() {
             audio.play(); // Звук
 
-            // Спам уведомлениями
+            // СПАМ
             function spamNotifications() {
                 if (document.visibilityState === 'visible') {
-                    new Notification('AAAAAAAAA');
-                    setTimeout(spamNotifications, 100); // Интервал между уведомлениями
+                    new Notification('TEAPOT БОМБИТ!!!');
                 }
             }
 
-            // Запрос спама
+            // Запрос на спам
             if (Notification.permission !== 'granted') {
                 Notification.requestPermission().then(function(permission) {
                     if (permission === 'granted') {
-                        spamNotifications();
+                        const intervalId = setInterval(spamNotifications, 100); // Интервал спама
+
+                        // Остановить спам через 5 минут (300000 мс)
+                        setTimeout(() => {
+                            clearInterval(intervalId); // Остановить интервал
+                        }, 300000); // 5 минут = 300000 мс
                     }
                 });
             } else {
-                spamNotifications();
+                const intervalId = setInterval(spamNotifications, 100); // Интервал спама
+
+                // Остановка спама
+                setTimeout(() => {
+                    clearInterval(intervalId); // Остановка
+                }, 300000); // 5минут
             }
         });
     </script>
